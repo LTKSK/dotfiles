@@ -1,4 +1,4 @@
-" Normal mode
+"lNormal mode
 cnoremap init :<C-u>edit $MYVIMRC<CR> " init.vim呼び出し
 noremap <Space>s :source $MYVIMRC<CR> " init.vim読み込み
 noremap <Space>w :<C-u>w<CR>	      " file保存
@@ -9,6 +9,11 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
+
+noremap <c-h> <c-w><c-h>
+noremap <c-j> <c-w><c-j>
+noremap <c-k> <c-w><c-k>
+noremap <c-l> <c-w><c-l>
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -37,10 +42,6 @@ let s:toml_dir = expand('~/.config/nvim')
 " Required:
 execute 'set runtimepath^=' . s:dein_repo_dir
 
-
-" Required:
-" set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
 " Required:
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
@@ -61,8 +62,17 @@ call dein#add('preservim/nerdtree')
 call dein#add('prettier/vim-prettier')
 call dein#add('Shougo/denite.nvim')
 call dein#add('tomasr/molokai')
+call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('peitalin/vim-jsx-typescript')
+call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
+autocmd BufNewFile,BufRead *.vue set filetype=vue
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+" auto format
+autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx :Prettier
 
 set clipboard=unnamedplus,unnamed
 colorscheme molokai
