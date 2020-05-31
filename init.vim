@@ -1,7 +1,18 @@
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
 "lNormal mode
 cnoremap init :<C-u>edit $MYVIMRC<CR> " init.vim呼び出し
 noremap <Space>s :source $MYVIMRC<CR> " init.vim読み込み
 noremap <Space>w :<C-u>w<CR>	      " file保存
+
+" window move
+noremap <c-h> <c-w><c-h> 
+noremap <c-j> <c-w><c-j>
+noremap <c-k> <c-w><c-k>
+noremap <c-l> <c-w><c-l>
 
 inoremap <silent> jj <ESC>
 inoremap <C-d> <BS>
@@ -9,11 +20,6 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
-
-noremap <c-h> <c-w><c-h>
-noremap <c-j> <c-w><c-j>
-noremap <c-k> <c-w><c-k>
-noremap <c-l> <c-w><c-l>
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -33,13 +39,9 @@ set nobomb
 set t_Co=256
 " 挿入モードでもバックスペースで削除できるように
 set backspace=indent,eol,start
+
 " enable mouse
 set mouse=a
-
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
 
 " pluginディレクトリへのpath
 let s:dein_dir = expand('~/.vim/dein')
@@ -75,7 +77,6 @@ call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('maxmellon/vim-jsx-pretty')
 call dein#add('peitalin/vim-jsx-typescript')
-" call dein#add('neoclide/coc.nvim', {'merged': 0, 'rev': 'release'})
 call dein#add('neovim/node-host', {'build': 'npm install'})
 call dein#add('billyvg/tigris.nvim', {'build': './install.sh'})
 
@@ -92,7 +93,7 @@ autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx :Prettier
 
-set clipboard+=unnamed
+set clipboard=unnamedplus,unnamed
 colorscheme molokai
 filetype plugin indent on
 syntax enable
@@ -101,5 +102,4 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
-
 

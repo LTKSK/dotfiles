@@ -24,3 +24,12 @@ hook_add = '''
     nmap <silent> gr <Plug>(coc-references)
 '''
 
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
