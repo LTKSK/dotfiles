@@ -26,6 +26,7 @@ map <C-n> :NERDTreeToggle<CR>
 " 基本設定
 set encoding=utf-8
 set number
+set nowrap
 set splitbelow
 set splitright
 set wildmenu
@@ -70,7 +71,7 @@ if dein#load_state(s:dein_dir)
 endif
 
 call dein#add('preservim/nerdtree')
-call dein#add('prettier/vim-prettier')
+call dein#add('prettier/vim-prettier', {'build': 'yarn install'})
 call dein#add('Shougo/denite.nvim')
 call dein#add('tomasr/molokai')
 call dein#add('jistr/vim-nerdtree-tabs')
@@ -79,6 +80,31 @@ call dein#add('maxmellon/vim-jsx-pretty')
 call dein#add('peitalin/vim-jsx-typescript')
 call dein#add('neovim/node-host', {'build': 'npm install'})
 call dein#add('billyvg/tigris.nvim', {'build': './install.sh'})
+
+" denite settings
+call dein#add('Shougo/denite.nvim')
+if !has('nvim')
+call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+
+" Define mappings
+nnoremap # :<C-u>Denite file/rec -split=floating file:new<CR>
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+   nnoremap <silent><buffer><expr> <CR>
+   \ denite#do_map('do_action')
+   nnoremap <silent><buffer><expr> d
+   \ denite#do_map('do_action', 'delete')
+   nnoremap <silent><buffer><expr> p
+   \ denite#do_map('do_action', 'preview')
+   nnoremap <silent><buffer><expr> q
+   \ denite#do_map('quit')
+   nnoremap <silent><buffer><expr> i
+   \ denite#do_map('open_filter_buffer')
+   nnoremap <silent><buffer><expr> <Space>
+   \ denite#do_map('toggle_select').'j'
+ endfunction
 
 " setting for tigris.nvim
 let g:tigris#debug = 1
