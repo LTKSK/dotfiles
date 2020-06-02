@@ -92,21 +92,17 @@ endif
 nnoremap # :<C-u>Denite file/rec -split=floating file:new<CR>
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
-   nnoremap <silent><buffer><expr> <CR>
-   \ denite#do_map('do_action')
-   nnoremap <silent><buffer><expr> d
-   \ denite#do_map('do_action', 'delete')
-   nnoremap <silent><buffer><expr> p
-   \ denite#do_map('do_action', 'preview')
-   nnoremap <silent><buffer><expr> q
-   \ denite#do_map('quit')
-   nnoremap <silent><buffer><expr> i
-   \ denite#do_map('open_filter_buffer')
-   nnoremap <silent><buffer><expr> <Space>
-   \ denite#do_map('toggle_select').'j'
- endfunction
+  nnoremap <silent><buffer><expr> <CR>  denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> o     denite#do_map('do_action', 'split')
+  nnoremap <silent><buffer><expr> v     denite#do_map('do_action', 'vsplit')
+  nnoremap         <buffer><expr> t     denite#do_map('do_action', 'dein_update')
+  nnoremap <silent><buffer><expr> d     denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p     denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> <Esc> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> q     denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
+endfunction
 
-" setting for tigris.nvim
 let g:tigris#debug = 1
 let g:tigris#on_the_fly_enabled = 1
 let g:tigris#delay = 300
@@ -118,6 +114,9 @@ autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 " auto format
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx :Prettier
+
+" call quickfix after grep
+autocmd QuickFixCmdPost *grep* cwindow
 
 set clipboard=unnamedplus,unnamed
 colorscheme molokai
