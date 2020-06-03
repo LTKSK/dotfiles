@@ -97,10 +97,11 @@ autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx :Prettier
 autocmd QuickFixCmdPost *grep* cwindow
 
 set clipboard=unnamedplus,unnamed
-" colorscheme molokai
-colorscheme kc 
 filetype plugin indent on
 syntax enable
+" colorscheme molokai
+" colorscheme kc 
+colorscheme ck 
 
 "If you want to install not installed plugins on startup.
 if dein#check_install()
