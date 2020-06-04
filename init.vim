@@ -38,6 +38,8 @@ set fileencoding=utf-8 encoding=utf-8
 set fileencodings=iso-2022-jp,utf-8,euc-jp,ucs-2le,cp932
 set nobomb
 set t_Co=256
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightgray
 " 挿入モードでもバックスペースで削除できるように
 set backspace=indent,eol,start
 
