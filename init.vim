@@ -39,6 +39,7 @@ set fileencodings=iso-2022-jp,utf-8,euc-jp,ucs-2le,cp932
 set nobomb
 set t_Co=256
 set colorcolumn=80
+set listchars=space:-
 highlight ColorColumn ctermbg=lightgray
 " 挿入モードでもバックスペースで削除できるように
 set backspace=indent,eol,start
@@ -104,6 +105,47 @@ syntax enable
 " colorscheme molokai
 " colorscheme kc 
 colorscheme ck 
+
+" ========show syntax info
+" from http://cohama.hateblo.jp/entry/2013/08/11/020849
+function! s:get_syn_id(transparent)
+  let synid = synID(line("."), col("."), 1)
+  if a:transparent
+    return synIDtrans(synid)
+  else
+    return synid
+  endif
+endfunction
+function! s:get_syn_attr(synid)
+let name = synIDattr(a:synid, "name")
+let ctermfg = synIDattr(a:synid, "fg", "cterm")
+let ctermbg = synIDattr(a:synid, "bg", "cterm")
+let guifg = synIDattr(a:synid, "fg", "gui")
+let guibg = synIDattr(a:synid, "bg", "gui")
+  return {
+\ "name": name,
+\ "ctermfg": ctermfg,
+\ "ctermbg": ctermbg,
+\ "guifg": guifg,
+\ "guibg": guibg}
+endfunction
+function! s:get_syn_info()
+let baseSyn = s:get_syn_attr(s:get_syn_id(0))
+echo "name: " . baseSyn.name .
+\ " ctermfg: " . baseSyn.ctermfg .    "   "
+\ " ctermbg: " . baseSyn.ctermbg .
+\ " guifg: " . baseSyn.guifg .
+\ " guibg: " . baseSyn.guibg
+let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
+echo "link to"
+echo "name: " . linkedSyn.name .
+\ " ctermfg: " . linkedSyn.ctermfg .
+\ " ctermbg: " . linkedSyn.ctermbg .
+\ " guifg: " . linkedSyn.guifg .
+\ " guibg: " . linkedSyn.guibg
+endfunction
+command! SyntaxInfo call s:get_syn_info()"
+" ========end show syntax info
 
 "If you want to install not installed plugins on startup.
 if dein#check_install()

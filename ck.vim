@@ -44,7 +44,7 @@ hi PMenuSbar guifg=NONE guibg=#848688 guisp=#848688 gui=NONE ctermfg=NONE ctermb
 hi Identifier guifg=#ff5fd7 guibg=NONE guisp=NONE gui=NONE ctermfg=206 ctermbg=NONE cterm=NONE
 hi SpecialChar guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Conditional guifg=#e0dd8d guibg=NONE guisp=NONE gui=bold ctermfg=186 ctermbg=NONE cterm=bold
-hi StorageClass guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
+hi StorageClass guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=117 ctermbg=NONE cterm=bold
 hi Todo guifg=#d1b8d0 guibg=#3a3a3a guisp=#3a3a3a gui=NONE ctermfg=182 ctermbg=237 cterm=NONE
 hi Special guifg=#ba25a6 guibg=NONE guisp=NONE gui=NONE ctermfg=5 ctermbg=NONE cterm=NONE
 hi LineNr guifg=#ad7594 guibg=NONE guisp=NONE gui=NONE ctermfg=132 ctermbg=NONE cterm=NONE
@@ -92,7 +92,7 @@ hi PMenuThumb guifg=NONE guibg=#a4a6a8 guisp=#a4a6a8 gui=NONE ctermfg=NONE cterm
 hi MatchParen guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 hi Repeat guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 hi SpellBad guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
-hi Directory guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
+hi Directory guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=206 ctermbg=NONE cterm=bold
 hi Structure guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
 hi Macro guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Underlined guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
