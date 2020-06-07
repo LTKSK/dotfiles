@@ -34,7 +34,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set incsearch
-set fileencoding=utf-8 encoding=utf-8
+set encoding=utf-8
+set fileencoding=utf-8 
 set fileencodings=iso-2022-jp,utf-8,euc-jp,ucs-2le,cp932
 set nobomb
 set t_Co=256
@@ -96,14 +97,13 @@ autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx :Prettier
 
-" call quickfix after grep
+" call quickfix after vim grep
 autocmd QuickFixCmdPost *grep* cwindow
 
 set clipboard=unnamedplus,unnamed
 filetype plugin indent on
 syntax enable
 " colorscheme molokai
-" colorscheme kc 
 colorscheme ck 
 
 " ========show syntax info
