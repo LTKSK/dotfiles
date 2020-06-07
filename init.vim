@@ -3,6 +3,10 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
+" scheme and syntax
+syntax enable
+colorscheme ck 
+
 "lNormal mode
 cnoremap init :<C-u>edit $MYVIMRC<CR> " init.vim呼び出し
 noremap <Space>s :source $MYVIMRC<CR> " init.vim読み込み
@@ -26,24 +30,25 @@ map <C-n> :NERDTreeToggle<CR>
 " 基本設定
 set encoding=utf-8
 set number
-set nowrap
+set nowrap " swapfileを作成しない
 set splitbelow
 set splitright
 set wildmenu
 set tabstop=2
 set shiftwidth=2
-set expandtab
 set incsearch
 set encoding=utf-8
 set fileencoding=utf-8 
 set fileencodings=iso-2022-jp,utf-8,euc-jp,ucs-2le,cp932
 set nobomb
+set smartindent " 改行時にいい感じにインデント
+set expandtab " tab > space "
+set autoread " 変更を自動で再読み込み
 set t_Co=256
 set colorcolumn=80
 set listchars=space:-
 highlight ColorColumn ctermbg=lightgray
-" 挿入モードでもバックスペースで削除できるように
-set backspace=indent,eol,start
+set backspace=indent,eol,start " 挿入モードでもバックスペースで削除できるように
 
 " enable mouse
 set mouse=a
@@ -102,9 +107,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 set clipboard=unnamedplus,unnamed
 filetype plugin indent on
-syntax enable
-" colorscheme molokai
-colorscheme ck 
 
 " ========show syntax info
 " from http://cohama.hateblo.jp/entry/2013/08/11/020849

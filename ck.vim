@@ -38,7 +38,7 @@ hi TabLineSel guifg=#5c4c5c guibg=#e89dd5 guisp=#e89dd5 gui=bold ctermfg=59 cter
 hi StatusLineNC guifg=#192224 guibg=#ffe0f0 guisp=#ffe0f0 gui=bold ctermfg=235 ctermbg=225 cterm=bold
 hi NonText guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=66 ctermbg=NONE cterm=NONE
 hi DiffText guifg=#9fb7c7 guibg=#e089d4 guisp=#e089d4 gui=NONE ctermfg=152 ctermbg=176 cterm=NONE
-hi ErrorMsg guifg=#d1afd1 guibg=#b00000 guisp=#b00000 gui=NONE ctermfg=182 ctermbg=124 cterm=NONE
+hi ErrorMsg guifg=#d1afd1 guibg=#b00000 guisp=#b00000 gui=NONE ctermfg=198 ctermbg=0 cterm=NONE
 hi Debug guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi PMenuSbar guifg=NONE guibg=#848688 guisp=#848688 gui=NONE ctermfg=NONE ctermbg=102 cterm=NONE
 hi Identifier guifg=#ff5fd7 guibg=NONE guisp=NONE gui=NONE ctermfg=206 ctermbg=NONE cterm=NONE
@@ -60,7 +60,7 @@ hi Character guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=162 ctermbg=NO
 hi Float guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=162 ctermbg=NONE cterm=NONE
 hi Number guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=162 ctermbg=NONE cterm=NONE
 hi Boolean guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=162 ctermbg=NONE cterm=NONE
-hi Operator guifg=#c799bb guibg=NONE guisp=NONE gui=bold ctermfg=182 ctermbg=NONE cterm=bold
+hi Operator guifg=#c799bb guibg=NONE guisp=NONE gui=bold ctermfg=162 ctermbg=NONE cterm=bold
 hi CursorLine guifg=NONE guibg=#222E30 guisp=#222E30 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi TabLineFill guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=bold ctermfg=235 ctermbg=66 cterm=bold
 hi WarningMsg guifg=#A1A6A8 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
@@ -82,7 +82,7 @@ hi Type guifg=#8ac0ed guibg=NONE guisp=NONE gui=bold ctermfg=117 ctermbg=NONE ct
 hi DiffChange guifg=#aac1cc guibg=#a66a97 guisp=#a66a97 gui=NONE ctermfg=152 ctermbg=132 cterm=NONE
 hi Cursor guifg=#192224 guibg=#F9F9F9 guisp=#F9F9F9 gui=NONE ctermfg=235 ctermbg=15 cterm=NONE
 hi SpellLocal guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
-hi Error guifg=#A1A6A8 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
+hi Error guifg=#A1A6A8 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=1 ctermbg=0 cterm=NONE
 hi PMenu guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
 hi SpecialKey guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=66 ctermbg=NONE cterm=NONE
 hi Constant guifg=#87afff guibg=NONE guisp=NONE gui=NONE ctermfg=111 ctermbg=NONE cterm=NONE
@@ -99,3 +99,10 @@ hi Underlined guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=18
 hi DiffAdd guifg=NONE guibg=#193224 guisp=#193224 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi TabLine guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=bold ctermfg=235 ctermbg=66 cterm=bold
 hi cursorim guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
+
+hi NormalFloat ctermfg=68 ctermbg=0 cterm=NONE
+hi javascriptValue ctermfg=68 ctermbg=NONE cterm=NONE
+hi javaScriptParens ctermfg=68 ctermbg=NONE cterm=NONE
+hi jsFunctionKey ctermfg=68 ctermbg=NONE cterm=NONE
+hi jsxCloseString ctermfg=68 ctermbg=NONE cterm=NONE
+
