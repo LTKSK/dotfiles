@@ -22,7 +22,6 @@ hi Normal guifg=#ffafff guibg=#0f0f0f guisp=#0f0f0f gui=NONE ctermfg=219 ctermbg
 "hi Question -- no settings --
 "hi EnumerationName -- no settings --
 "hi DefinedName -- no settings --
-"hi LocalVariable -- no settings --
 "hi CTagsClass -- no settings --
 "hi clear -- no settings --
 hi IncSearch guifg=#3b2f3b guibg=#ffafff guisp=#ffafff gui=NONE ctermfg=237 ctermbg=219 cterm=NONE
@@ -99,6 +98,7 @@ hi Underlined guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=18
 hi DiffAdd guifg=NONE guibg=#193224 guisp=#193224 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi TabLine guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=bold ctermfg=235 ctermbg=66 cterm=bold
 hi cursorim guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
+hi LocalVariable guifg=#ff5fd7 guibg=NONE guisp=NONE gui=NONE ctermfg=206 ctermbg=NONE cterm=NONE
 
 hi NormalFloat ctermfg=68 ctermbg=0 cterm=NONE
 hi javascriptValue ctermfg=68 ctermbg=NONE cterm=NONE
