@@ -39,7 +39,8 @@ set shiftwidth=2
 set incsearch
 set encoding=utf-8
 set fileencoding=utf-8 
-set fileencodings=iso-2022-jp,utf-8,euc-jp,ucs-2le,cp932
+set fileencodings=iso-2022-jp,utf-8,euc-jp,cp932
+set fileformats=unix,dos,max
 set nobomb
 set smartindent " 改行時にいい感じにインデント
 set expandtab " tab > space "
