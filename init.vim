@@ -28,7 +28,6 @@ inoremap <C-j> <Down>
 map <C-n> :NERDTreeToggle<CR>
 
 " 基本設定
-set encoding=utf-8
 set number
 set nowrap " swapfileを作成しない
 set splitbelow
@@ -39,7 +38,7 @@ set shiftwidth=2
 set incsearch
 set encoding=utf-8
 set fileencoding=utf-8 
-set fileencodings=iso-2022-jp,utf-8,euc-jp,cp932
+set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932
 set fileformats=unix,dos,max
 set nobomb
 set smartindent " 改行時にいい感じにインデント
