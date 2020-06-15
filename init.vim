@@ -25,8 +25,6 @@ inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 
-map <C-n> :NERDTreeToggle<CR>
-
 " 基本設定
 set number
 set nowrap " swapfileを作成しない
@@ -78,11 +76,9 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-call dein#add('preservim/nerdtree')
 call dein#add('prettier/vim-prettier', {'build': 'yarn install'})
 call dein#add('Shougo/denite.nvim')
 call dein#add('tomasr/molokai')
-call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('maxmellon/vim-jsx-pretty')
 call dein#add('peitalin/vim-jsx-typescript')

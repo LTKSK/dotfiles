@@ -11,6 +11,17 @@ repo = 'mattn/emmet-vim'
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
+repo = 'preservim/nerdtree' 
+hook_add = '''
+  map <C-n> :NERDTreeToggle<CR>
+  nmap ,f :<C-u>NERDTreeFind<CR>
+'''
+
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs' 
+
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = '''
@@ -46,6 +57,7 @@ hook_add = '''
 repo = 'Shougo/denite.nvim'
 hook_add = '''
   nmap <silent> ,g :<C-u>Denite grep<CR>
+  nmap <silent> ,b :<C-u>Denite buffer -split=floating<CR>
 
   nnoremap # :<C-u>Denite file/rec -split=floating file:new<CR>
   autocmd FileType denite call s:denite_my_settings()
