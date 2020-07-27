@@ -20,6 +20,18 @@ hook_add = '''
 [[plugins]]
 repo = 'jistr/vim-nerdtree-tabs' 
 
+[[plugins]]
+repo = 'mattn/vim-lexiv' 
+
+[[plugins]]
+repo = 'tyru/caw.vim' 
+hook_add = '''
+  nmap <C-_> <Plug>(caw:hatpos:toggle)
+  vmap <C-_> <Plug>(caw:hatpos:toggle)
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim' 
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'

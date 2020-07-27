@@ -27,6 +27,7 @@ inoremap <C-j> <Down>
 
 " 基本設定
 set number
+set nohlsearch
 set nowrap " swapfileを作成しない
 set splitbelow
 set splitright
