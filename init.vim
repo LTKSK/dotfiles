@@ -25,6 +25,8 @@ inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 
+nmap <space>e :CocCommand explorer<CR>
+
 " 基本設定
 set number
 set nohlsearch
@@ -77,15 +79,6 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-call dein#add('prettier/vim-prettier', {'build': 'yarn install'})
-call dein#add('Shougo/denite.nvim')
-call dein#add('tomasr/molokai')
-call dein#add('leafgarland/typescript-vim')
-call dein#add('maxmellon/vim-jsx-pretty')
-call dein#add('peitalin/vim-jsx-typescript')
-call dein#add('neovim/node-host', {'build': 'npm install'})
-call dein#add('billyvg/tigris.nvim', {'build': './install.sh'})
-
 let g:tigris#debug = 1
 let g:tigris#on_the_fly_enabled = 1
 let g:tigris#delay = 300
@@ -94,9 +87,6 @@ autocmd BufNewFile,BufRead *.ts set filetype=typescript
 autocmd BufNewFile,BufRead *.vue set filetype=vue
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-" auto format
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx :Prettier
 
 " call quickfix after vim grep
 autocmd QuickFixCmdPost *grep* cwindow
