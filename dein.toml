@@ -14,9 +14,6 @@ build = '''
 '''
 
 [[plugins]]
-repo = 'vim-scripts/denite.nvim'
-
-[[plugins]]
 repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
@@ -121,7 +118,7 @@ hook_add = '''
     nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
   endfunction
 
-  call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+  call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git', '--glob', '!node_modules'])
   call denite#custom#var('grep', 'command', ['rg'])
   call denite#custom#var('grep', 'default_opts',
     \ ['-i', '--vimgrep', '--no-heading'])
@@ -129,6 +126,7 @@ hook_add = '''
   call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
   call denite#custom#var('grep', 'separator', ['--'])
   call denite#custom#var('grep', 'final_opts', [])
+  call denite#custom#option('default', {'start_filter': 1})
 '''
 
 [[plugins]]
