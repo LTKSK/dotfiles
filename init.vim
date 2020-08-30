@@ -17,6 +17,11 @@ noremap <c-h> <c-w><c-h>
 noremap <c-j> <c-w><c-j>
 noremap <c-k> <c-w><c-k>
 noremap <c-l> <c-w><c-l>
+" show files
+let mapleader="\<Space>"
+noremap <Leader>e :<C-u>e %:h<CR>
+noremap <Leader>v :<C-u>vs %:h<CR>
+noremap <Leader>t :<C-u>tabnew %:h<CR>
 
 inoremap <silent> jj <ESC>
 inoremap <C-d> <BS>
