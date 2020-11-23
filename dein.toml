@@ -38,17 +38,26 @@ build = '''
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
-repo = 'preservim/nerdtree' 
-hook_add = '''
-  map <C-n> :NERDTreeToggle<CR>
-  nmap ,f :<C-u>NERDTreeFind<CR>
-'''
-
-[[plugins]]
-repo = 'jistr/vim-nerdtree-tabs' 
-
-[[plugins]]
 repo = 'mattn/vim-lexiv' 
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_add = '''
+  nnoremap ,t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
+
+  function! s:fern_setup() abort
+    nnoremap <buffer> <nowait> q :<c-u>quit<cr>
+    nmap <buffer>
+      \ <Plug>(fern-action-open)
+      \ <Plug>(fern-action-open:select)
+  endfunction
+
+  augroup __fern__
+    au!
+    autocmd VimEnter * ++nested Fern . -drawer -stay -keep -toggle -reveal=%
+    autocmd FileType fern call s:fern_setup()
+  augroup END
+'''
 
 [[plugins]]
 repo = 'tyru/caw.vim' 
